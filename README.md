@@ -1,6 +1,4 @@
 # Initial page
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRose2161%2Feth2deposit.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FRose2161%2Feth2deposit?ref=badge_shield)
-
 # Forked
 # eth2.0-deposit-cli readme
 
@@ -492,7 +490,3 @@ python3 -m pip install -r requirements_test.txt
 ```sh
 python3 -m pytest .
 ```
-
-
-## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRose2161%2Feth2deposit.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FRose2161%2Feth2deposit?ref=badge_large)
