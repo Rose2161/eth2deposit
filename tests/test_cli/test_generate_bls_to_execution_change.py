@@ -111,7 +111,7 @@ def test_existing_mnemonic_bls_withdrawal_multiple() -> None:
     bls_to_execution_changes_folder_path = os.path.join(my_folder_path, DEFAULT_BLS_TO_EXECUTION_CHANGES_FOLDER_NAME)
     _, _, btec_files = next(os.walk(bls_to_execution_changes_folder_path))
 
-    # TODO verify file content
+    # verify file content
     assert len(set(btec_files)) == 1
 
     # Verify file permissions
