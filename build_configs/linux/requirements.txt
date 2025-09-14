@@ -2,7 +2,7 @@
 -r ../../requirements.txt
 
 # Build tools for binary distribution
-pyinstaller==6.0.0 \
+pyinstaller==6.0.0
     --hash=sha256:086e68aa1e72f6aa13b9d170a395755e2b194b8ab410caeed02d16b432410c8c \
     --hash=sha256:2519db3edec87d8c33924c2c4b7e176d8c1bbd9ba892d77efb67281925e621d6 \
     --hash=sha256:29341d2e86d5ce7df993e797ee96ef679041fc85376d31c35c7b714085a21299 \
