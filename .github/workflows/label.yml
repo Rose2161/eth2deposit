@@ -5,18 +5,23 @@
 # file with configuration.  For more information, see:
 # https://github.com/actions/labeler
 
-name: Labeler
-on: [pull_request_target]
+name: "Label Previous Pull Requests"
+on:
+  schedule:
+    - cron: "0 1 * * 1"
 
 jobs:
-  label:
-
-    runs-on: ubuntu-latest
+  labeler:
     permissions:
       contents: read
       pull-requests: write
-
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/labeler@v4
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+    
+    # Label PRs 1, 2, and 3
+    - uses: actions/labeler@v6
+      with:        
+        pr-number: |
+          1
+          2
+          3
