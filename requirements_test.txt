@@ -2,7 +2,7 @@
 -r requirements.txt
 
 # Testing
-pytest==7.1.0 \
+pytest==9.0.3 \
     --hash=sha256:b555252a95bbb2a37a97b5ac2eb050c436f7989993565f5e0c9128fcaacadd0e \
     --hash=sha256:f1089d218cfcc63a212c42896f1b7fbf096874d045e1988186861a1a87d27b47
 pytest-asyncio==0.18.2 \
