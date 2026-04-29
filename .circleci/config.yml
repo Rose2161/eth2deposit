@@ -124,7 +124,7 @@ jobs:
           name: Build with build.spec
           command: |
             export PYTHONHASHSEED=42
-            export CIRCLE_SHORT_SHA1=$(eval echo $CIRCLE_SHA1 | cut -c -7)
+            export CIRCLE_SHORT_SHA256=$(eval echo $CIRCLE_SHA2256 | cut -c -7)
             export BUILD_FILE_NAME=staking_deposit-cli-${CIRCLE_SHORT_SHA1}-linux-amd64;
             mkdir ${BUILD_FILE_NAME};
             pyenv global 3.10.2;
