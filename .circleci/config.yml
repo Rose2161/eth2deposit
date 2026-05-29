@@ -110,7 +110,7 @@ jobs:
           command: python ./test_btec_script.py
   build-linux-amd64:
     machine:
-      image: ubuntu-2004:202201-02
+      image: ubuntu-2204:current
     working_directory: ~/repo
     steps:
       - checkout
@@ -124,7 +124,7 @@ jobs:
           name: Build with build.spec
           command: |
             export PYTHONHASHSEED=42
-            export CIRCLE_SHORT_SHA256=$(eval echo $CIRCLE_SHA2256 | cut -c -7)
+            export CIRCLE_SHORT_SHA256=$(eval echo $CIRCLE_SHA256 | cut -c -7)
             export BUILD_FILE_NAME=staking_deposit-cli-${CIRCLE_SHORT_SHA256}-linux-amd64;
             mkdir ${BUILD_FILE_NAME};
             pyenv global 3.10.2;
@@ -157,7 +157,7 @@ jobs:
           path: /tmp/artifacts
   build-linux-arm64:
     machine:
-      image: ubuntu-2004:202201-02
+      image: ubuntu-2204:current
     resource_class: arm.medium
     working_directory: ~/repo
     steps:
@@ -316,11 +316,39 @@ workflows:
       - win-py310-script
   build_linux:
     jobs:
-      - build-linux-amd64
-      - build-linux-arm64
+      - build-linux-amd64:
+          filters:
+            branches:
+              only:
+                - master
+            tags:
+              only:
+                - /^v.*/
+      - build-linux-arm64:
+          filters:
+            branches:
+              only:
+                - master
+            tags:
+              only:
+                - /^v.*/
   build_windows:
     jobs:
-        - build-windows
+      - build-windows:
+          filters:
+            branches:
+              only:
+                - master
+            tags:
+              only:
+                - /^v.*/
   build_macos:
     jobs:
-        - build-macos
+      - build-macos:
+          filters:
+            branches:
+              only:
+                - master
+            tags:
+              only:
+                - /^v.*/
